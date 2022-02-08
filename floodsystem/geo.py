@@ -44,4 +44,7 @@ def stations_by_river(stations):
             if r == s.river:
                 riverdict[r].append(s.name)
     return riverdict
-                
+
+
+def rivers_by_station_number(stations, N):
+                    
