@@ -45,6 +45,19 @@ def stations_by_river(stations):
                 riverdict[r].append(s.name)
     return riverdict
 
-
 def rivers_by_station_number(stations, N):
-                    
+    '''this function determines the N rivers with
+    the greatest number of monitoring stations,
+    returns list of tuples sorted by number of stations'''
+    riv = stations_by_river(stations)
+    riv_num = []
+    for river in riv:        
+        riv_num.append((river, len(riv[river])))
+    riv_sorted = sorted_by_key(riv_num, 1, reverse=True)
+    river_final = riv_sorted[:N]
+    for river in riv_sorted:
+        if river[1] == river_final[-1][1]:
+            river_final.append(river)
+        else:
+            break
+    return river_final
