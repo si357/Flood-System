@@ -16,7 +16,7 @@ import random
 
 def test_stations_by_distance():
 
-    """Check that the outputs of stations_by_distance are of the correct type and value"""
+    
 
  
 
@@ -62,7 +62,7 @@ def test_stations_by_distance():
 
 def test_stations_within_radius():
 
-    """Check that the outputs of stations_within_radius are of the correct type"""
+    
 
     stations = build_station_list()
 
@@ -108,7 +108,6 @@ def test_stations_within_radius():
 
 def test_rivers_with_station():
 
-    """Check that the outputs of rivers_with_station are of the correct type"""
 
     stations = build_station_list()
 
@@ -144,7 +143,6 @@ def test_rivers_with_station():
 
 def test_stations_by_river():
 
-    """Check that the outputs of stations_by_river are of the correct type and value"""
 
     stations = build_station_list()
 
@@ -172,7 +170,6 @@ def test_stations_by_river():
 
 def test_rivers_by_station_number():
 
-    """Check that the outputs of rivers_by_station_number are of the correct type"""
 
     stations = build_station_list()
 
