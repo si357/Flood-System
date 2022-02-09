@@ -46,9 +46,6 @@ def stations_by_river(stations):
     return riverdict
 
 def rivers_by_station_number(stations, N):
-    '''this function determines the N rivers with
-    the greatest number of monitoring stations,
-    returns list of tuples sorted by number of stations'''
     rive = stations_by_river(stations)
     rive_num = []
     for river in rive:        

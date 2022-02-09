@@ -11,5 +11,9 @@ def run():
     for station in inconsistent: 
         out_range.append(station.name)
     out_range.sort() 
-    print(out_range) 
-run()
+    print(out_range)
+
+if __name__ == "__main__":
+    print("*** Task 1F: CUED Part IA Flood Warning System ***")
+    print(' \n \n ') 
+    run()
