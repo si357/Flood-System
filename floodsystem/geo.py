@@ -46,15 +46,13 @@ def stations_by_river(stations):
     return riverdict
 
 def rivers_by_station_number(stations, N):
-    rive = stations_by_river(stations)
-    rive_num = []
-    for river in rive:        
-        rive_num.append((river, len(rive[river])))
-    riv_sorted = sorted_by_key(rive_num, 1, reverse=True)
-    final = riv_sorted[:N]
-    for river in riv_sorted:
-        if river[1] == final[-1][1]:
-            final.append(river)
-        else:
+    
+    unsorted = [(river[0], len(river[1])) for river in stations_by_river(stations).items()]
+    rivers_number = sorted_by_key(unsorted, 1, reverse=True)
+    nth = rivers_number[N - 1][1]
+    rivers_output = []
+    for river in rivers_number:
+        if river[1] < nth:
             break
-    return final
+        rivers_output.append(river)
+    return rivers_output
