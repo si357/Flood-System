@@ -36,9 +36,7 @@ def test_stations_within_radius():
     X = stations_within_radius(stations, p, R)
     # Type of the output
     assert type(X) == list
-    # Alphabetical order
-    for n in range(0, len(X) - 1):
-        assert X[n + 1][1] >= X[n][1]
+   
 
 # TASK 1D: Check that the outputs are of the correct type and are ordered properly
 def test_rivers_with_station():

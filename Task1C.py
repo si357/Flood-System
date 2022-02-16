@@ -8,8 +8,8 @@ def run():
     b = []
     for station in x:
         b.append(station.name)
-    b.sort()
-    print(b)
+    
+    print(sorted(b))
 
 if __name__ == "__main__":
     print("*** Task 1C: CUED Part IA Flood Warning System ***")

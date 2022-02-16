@@ -21,9 +21,9 @@ def stations_by_distance(stations, p):
 def stations_within_radius(stations, centre, r):
     x = stations_by_distance(stations, centre)
     lt = []
-    for stat in x:
-        if stat[1] < r:
-            lt.append(stat)
+    for station in x:
+        if station[1] < r:
+            lt.append(station[0])
     return lt 
 
 def rivers_with_station(stations):
