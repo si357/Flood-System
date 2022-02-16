@@ -1,3 +1,4 @@
+
 from floodsystem.stationdata import build_station_list
 from floodsystem.geo import stations_by_distance
 
@@ -13,7 +14,7 @@ def run():
     for i in range(10):
         close.append((x[i][0].name, x[i][0].town,  x[i][1]))
 
-    for i in range(-10, -1):
+    for i in range(-10, 0):
         far.append((x[i][0].name, x[i][0].town, x[i][1]))
 
 
