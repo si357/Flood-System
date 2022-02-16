@@ -33,11 +33,7 @@ jobs:
       - name: Run unit tests using pytest
         run: |
           pytest -v
-          test_datafetcher.py
-          test_geo.py
-          test_station.py
-          test_stationdata.py
-          test_utils.py
+          
 
       - name: Run Deliverable 1 code
         run: |
