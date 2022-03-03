@@ -32,7 +32,6 @@ def plot_water_levels(station, dates, levels):
     plt.show()
 
 def plot_water_level_with_fit(station, dates, levels, p):
-    """Plots the historic water data (given by dates, levels) and the least-squares polynomial approximation (of order p)"""
     #create polynomial object and plot it using 30 data points spaced along the requested period (denoted by dates)
     #print(dates)
     poly, offset = polyfit(dates, levels, p)
@@ -40,9 +39,9 @@ def plot_water_level_with_fit(station, dates, levels, p):
     plt.plot(dateFloat, poly(dateFloat-offset))
 
     #Plot exact data 
-    plt.plot(dates,levels)
+    plt.plot(dates,levels, '.')
 
-    #Format graph
+    #Format graphs
     plt.xlabel('Date')
     plt.ylabel('Water Level (m)')
     plt.xticks(rotation=45)

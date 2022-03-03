@@ -30,3 +30,4 @@ def relative_risk(station):
             number +=1
 
     return number
+
