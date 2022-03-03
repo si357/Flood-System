@@ -1,7 +1,11 @@
 import matplotlib.pyplot as plt
 import matplotlib
-from datetime import datetime, timedelta
 import numpy as np
+from .analysis import polyfit
+import matplotlib.dates as date
+from matplotlib.dates import date2num
+from datetime import datetime, timedelta
+
 
 
 def plot_water_levels(station, dates, levels):
@@ -25,4 +29,24 @@ def plot_water_levels(station, dates, levels):
 
     # Display the plot, ensuring no labels are cut off
     plt.tight_layout()
+    plt.show()
+
+def plot_water_level_with_fit(station, dates, levels, p):
+    """Plots the historic water data (given by dates, levels) and the least-squares polynomial approximation (of order p)"""
+    #create polynomial object and plot it using 30 data points spaced along the requested period (denoted by dates)
+    #print(dates)
+    poly, offset = polyfit(dates, levels, p)
+    dateFloat = date2num(dates)
+    plt.plot(dateFloat, poly(dateFloat-offset))
+
+    #Plot exact data 
+    plt.plot(dates,levels)
+
+    #Format graph
+    plt.xlabel('Date')
+    plt.ylabel('Water Level (m)')
+    plt.xticks(rotation=45)
+    plt.title(station.name)
+    plt.tight_layout()
+
     plt.show()
